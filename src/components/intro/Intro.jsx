@@ -57,7 +57,7 @@ const Intro = () => {
         <motion.p variants={sliderVariants} initial="initial" animate="animate">Enthusiast UI Developer </motion.p>
       </div>
       <motion.div variants={sliderVariants} className="imageContainer">
-        <Lottie animationData={animateData} />
+        <Lottie animationData={animateData} loop={true} />
       </motion.div>
       
     </div>
