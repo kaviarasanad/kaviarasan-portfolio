@@ -1,0 +1,211 @@
+@import "../../app.scss";
+.services{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .textContainer{
+        flex: 1;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        @include mobile{
+            align-self: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        @include small{
+            gap: 5px;
+        }
+        p{
+            font-weight: 200;
+            font-size: 14px;
+            color: #ffffff;
+            text-align: right;
+            @include small{
+                font-size: 12px;
+                margin-top: 3px;
+            }
+        }
+        hr{
+            width: 300px;
+            border: none;
+            border-top: 0.5px solid #ebebeb;
+            @include mobile{
+                width: 100%;
+            }
+        }
+    }
+    .titleContainer{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include mobile{
+            width: 100%;
+            padding-top: 5px;
+        }
+        .title{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            @include mobile{
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            @include tablet{
+                gap:20px;
+            }
+            img{
+                width: 300px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 50px;
+                @include mobile{
+                    height: 50px;
+                    width:200px;
+                }
+                @include small{
+                    height: 40px;
+                    width: 130px;
+                }
+                @include tablet{
+                    width: 250px;
+                    height: 80px;
+                }
+            }
+            h2{
+                font-size: 80px;
+                font-weight: 100;
+                @include tablet{
+                    font-size: 60px;
+                }
+                @include mobile{
+                    font-size: 35px;
+                }
+                @include small{
+                    font-size: 28px;
+                }
+            }
+            button{
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                font-size: 24px;
+                background-color: #ff800a;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                @include tablet{
+                    width: 250px;
+                    height: 80px;
+                }
+                @include mobile{
+                    font-size: 16px;
+                    height: 50px;
+                    width:155px;
+                }
+                @include small{
+                    font-size: 14px;
+                    height: 40px;
+                    width: 100px;
+                }
+            }
+        }
+    }
+    .listContainer{
+        flex: 2;
+        display: flex;
+        margin: auto;
+        padding: 30px;
+        gap: 20px;
+        @include mobile{
+            flex-direction: column;
+            width: 100%;
+            padding: 15px;
+        }
+        .box{
+            padding: 20px;
+            display: flex;
+            flex:1;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            gap: 10px;
+            background: transparent;
+            backdrop-filter: blur(5px);
+
+            @include mobile{
+                align-items: center;
+                padding: 10px;
+            }
+            .icon{
+                width: 10%;
+                font-size: 28px;
+                @include mobile{
+                    display:none;
+                }
+                @include tablet{
+                    width:15%;
+                }
+            }
+            h2{
+                @include tablet{
+                    font-size: 22px;
+                }
+            }
+            p{
+                font-weight: 300;
+                @include mobile{
+                    display: none;
+                }
+            }
+            button{
+                padding: 10px;
+                background: #ff800a;
+                border: none;
+                cursor: pointer;
+                @include mobile{
+                    background: transparent;
+                    color: #fff;
+                    border: 0.5px solid #ff800a;
+                    border-radius: 7px;
+                    width:40%;
+                    padding: 5px;
+                }
+            }
+        }
+        .box::after{
+            content:' ';
+            background: #adadad;
+            height: 0;
+            width: 0;
+            border-radius: 100% 0% 0% 100% / 100% 100% 0% 0% ;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+            transition: all .5s;
+        }.box::before{
+            content:' ';
+            background: #adadad;
+            height: 0;
+            width: 0;
+            border-radius: 100% 0% 100% 0% / 0% 0% 100% 100% ;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .5s;
+        }
+        .box:hover::before,.box:hover::after{
+            height: 100%;
+            width: 100%;
+        }
+        
+       
+    }
+}    

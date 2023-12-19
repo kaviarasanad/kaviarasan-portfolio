@@ -1,0 +1,131 @@
+@import "../../app.scss";
+.about{
+    height: 100%;
+    padding: 50px;
+    @include mobile{
+        padding: 20px;
+    }
+    @include small{
+        padding: 10px;
+    }
+    @include tablet{
+        padding:20px;
+    }
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mobile{
+            flex-direction: column;
+        }
+        .animation{
+            flex: 1;
+            @include mobile{
+                display: none;
+            }
+            @include small{
+                display: flex;
+                justify-content: center;
+                height: 50%;
+            }
+            div{
+                @include small{
+                    width:75%;
+                }
+            }
+            
+        }
+        .textContainer{
+            flex:2;
+            
+            h2{
+                font-size: 50px;
+                color:#ff800a;
+                font-weight: 600;
+                @include mobile{
+                    font-size: 33px;
+                }
+                @include small{
+                    font-size: 28px;
+                }
+            }
+            p{
+                font-size: 18px;
+                font-weight: 200;
+                letter-spacing: 1.2px;
+                padding: 10px;
+                text-align: justify;
+                @include mobile{
+                    font-size: 15px;
+                }
+                @include small{
+                    font-size: 13px;
+                    text-align: left;
+                    padding: 0px;
+                }
+                .hidden{
+                    color: #fff;
+                    font-weight:200;
+                    @include tablet{
+                        display: none;
+                    }
+                }
+            }
+            span{
+                color: #ff800a;
+                font-weight: 600;
+            }
+            .about-title{
+                display: flex;
+                margin: 20px 0;
+                @include small{
+                    display: none;
+                }
+                p{
+                    margin-right: 50px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    position: relative;
+                }
+                .about-links::after{
+                    content: '';
+                    width: 0;
+                    height: 3px;
+                    background:#ff800a;
+                    position: absolute;
+                    left: 0;
+                    bottom:-3px;
+                    transition: 0.5s;
+                }
+                .about-links.active-link::after{
+                    width: 100%;
+                }
+            }
+            .about-content{
+                display: none;
+                height: 150px;
+                @include small{
+                    display: none;
+                }
+                li{
+                    list-style-type: none;
+                    margin: 10px 0;
+                    margin-left: 10px;
+                    font-size: 17px;
+                    span{
+                        color: #ff800a;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .about-content.active-about-content{
+                    display: block;
+                    @include small{
+                        display: none;
+                    }
+            }
+            
+        }
+    }
+}
